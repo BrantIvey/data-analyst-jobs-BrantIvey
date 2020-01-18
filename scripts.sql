@@ -29,3 +29,16 @@ WHERE location = 'TN';
 SELECT COUNT (*)
 FROM data_analyst_jobs
 WHERE location = 'TN' OR location = 'KY';
+
+/* 4. How many posting in Tennessee have a star rating above 4?
+
+Answer: 3
+
+*/
+
+SELECT COUNT (*)
+FROM data_analyst_jobs
+WHERE location = 'TN' AND star_rating > 4;
+
+
+
