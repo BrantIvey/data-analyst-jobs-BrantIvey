@@ -91,6 +91,20 @@ WHERE review_count > 5000 AND company IS NOT NULL
 GROUP BY company
 ORDER BY review_count DESC;
 
+/* 10.	Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating?
+
+Answer: Google, 4.3
+
+*/
+
+SELECT company, SUM(review_count) as review_count, AVG (star_rating) as      avg_star_rating
+FROM data_analyst_jobs
+WHERE review_count > 5000
+GROUP BY company
+ORDER BY avg_star_rating DESC;
+
+
+
 
 
 
