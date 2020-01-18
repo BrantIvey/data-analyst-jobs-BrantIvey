@@ -49,4 +49,14 @@ SELECT COUNT (*)
 FROM data_analyst_jobs
 WHERE review_count BETWEEN 500 and 1000;
 
+/* 6. 6.	Show the average star rating for each state. The output should show the state as `state` and the average rating for the state as `avg_rating`. Which state shows the highest average rating? 
+
+Answer: NE
+
+*/
+
+SELECT location AS state, AVG(star_rating) as avg_rating
+FROM data_analyst_jobs
+GROUP BY state
+ORDER BY avg_rating DESC
 
