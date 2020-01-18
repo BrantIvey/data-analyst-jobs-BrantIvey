@@ -2,6 +2,7 @@
 
 */
 
+
 SELECT COUNT (*)
 FROM data_analyst_jobs;
 
@@ -10,6 +11,7 @@ FROM data_analyst_jobs;
 Answer: XTO Land Data Analyst
 
 */
+
 
 SELECT *
 FROM data_analyst_jobs
@@ -30,6 +32,7 @@ SELECT COUNT (*)
 FROM data_analyst_jobs
 WHERE location = 'TN' OR location = 'KY';
 
+
 /* 4. How many posting in Tennessee have a star rating above 4?
 
 Answer: 3
@@ -40,10 +43,14 @@ SELECT COUNT (*)
 FROM data_analyst_jobs
 WHERE location = 'TN' AND star_rating > 4;
 
+
 /* 5. How many postings in the dataset have a review count between 500 and 1000? 
 
 Answer: 151
+
+
 */
+
 
 SELECT COUNT (*)
 FROM data_analyst_jobs
@@ -60,9 +67,11 @@ FROM data_analyst_jobs
 GROUP BY state
 ORDER BY avg_rating DESC;
 
+
 /* 7.	Select unique job titles from the data_analyst_jobs table. How many are there?
 
 Answer: 881 
+
 
 */
 
@@ -79,9 +88,11 @@ SELECT COUNT (DISTINCT title)
 FROM data_analyst_jobs
 WHERE location = 'CA';
 
+
 /* 9.	Find the name of each company and its average star rating for all companies that have more than 5000 reviews across all locations. How many companies are there with more that 5000 reviews across all locations?
 
 Answer: 40
+
 
 */
 
@@ -95,6 +106,7 @@ ORDER BY review_count DESC;
 
 Answer: Google, 4.3
 
+
 */
 
 SELECT company, SUM(review_count) as review_count, AVG (star_rating) as      avg_star_rating
@@ -107,6 +119,7 @@ ORDER BY avg_star_rating DESC;
 
 Answer: 774
 
+
 */
 
 SELECT DISTINCT title
@@ -116,6 +129,17 @@ title LIKE '%Analyst%' OR
 title LIKE '%ANALYST%';
 
 
+/* 12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
+
+Answer: 4, Tableau
+
+*/
+
+SELECT DISTINCT title
+FROM data_analyst_jobs
+WHERE title NOT LIKE '%analy%' AND
+title NOT LIKE '%Analy%' AND
+title NOT LIKE '%ANALY%';
 
 
 
